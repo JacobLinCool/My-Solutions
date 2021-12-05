@@ -32,7 +32,7 @@ jobs:
             - name: Commit
               uses: peaceiris/actions-gh-pages@v3
               with:
-                  github_token: ${{ secrets.GH_TOKEN }}
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: "./build"
                   user_name: "JacobLinCool"
                   user_email: "jacoblincool@users.noreply.github.com"
