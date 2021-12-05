@@ -1,0 +1,9 @@
+import{S as O,i as P,s as Q,k as H,e as _,t as l,Q as R,d as n,n as I,c as v,a as m,g as r,b as o,f as M,F as e,J as N}from"../chunks/vendor-feed20ac.js";function z(p){let f,b,a,u,w,g,k,S,T,t,x,i,C,A,c,J,j,h,q,K;return document.title=f=p[0],{c(){b=H(),a=_("section"),u=_("h1"),w=l("Welcome to "),g=_("b"),k=l(p[0]),S=l("!"),T=H(),t=_("p"),x=l(`This website is created by
+        `),i=_("a"),C=l("JacobLinCool"),A=l(` with
+        `),c=_("a"),J=l("SvelteKit"),j=l(` &
+        `),h=_("a"),q=l("Tailwind"),K=l(`
+        .`),this.h()},l(s){R('[data-svelte="svelte-1uo06u1"]',document.head).forEach(n),b=I(s),a=v(s,"SECTION",{class:!0});var y=m(a);u=v(y,"H1",{});var $=m(u);w=r($,"Welcome to "),g=v($,"B",{});var L=m(g);k=r(L,p[0]),L.forEach(n),S=r($,"!"),$.forEach(n),T=I(y),t=v(y,"P",{});var d=m(t);x=r(d,`This website is created by
+        `),i=v(d,"A",{href:!0,target:!0,class:!0});var W=m(i);C=r(W,"JacobLinCool"),W.forEach(n),A=r(d,` with
+        `),c=v(d,"A",{href:!0,target:!0,class:!0});var B=m(c);J=r(B,"SvelteKit"),B.forEach(n),j=r(d,` &
+        `),h=v(d,"A",{href:!0,target:!0,class:!0});var F=m(h);q=r(F,"Tailwind"),F.forEach(n),K=r(d,`
+        .`),d.forEach(n),y.forEach(n),this.h()},h(){o(i,"href","https://github.com/jacoblincool"),o(i,"target","_blank"),o(i,"class","svelte-7058fm"),o(c,"href","https://kit.svelte.dev"),o(c,"target","_blank"),o(c,"class","svelte-7058fm"),o(h,"href","https://tailwindcss.com/"),o(h,"target","_blank"),o(h,"class","svelte-7058fm"),o(a,"class","svelte-7058fm")},m(s,E){M(s,b,E),M(s,a,E),e(a,u),e(u,w),e(u,g),e(g,k),e(u,S),e(a,T),e(a,t),e(t,x),e(t,i),e(i,C),e(t,A),e(t,c),e(c,J),e(t,j),e(t,h),e(h,q),e(t,K)},p(s,[E]){E&1&&f!==(f=s[0])&&(document.title=f)},i:N,o:N,d(s){s&&n(b),s&&n(a)}}}function D(p,f,b){return["My Solutions"]}class U extends O{constructor(f){super();P(this,f,D,z,Q,{title:0})}get title(){return this.$$.ctx[0]}}export{U as default};
