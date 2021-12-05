@@ -1,11 +1,12 @@
 <script lang="ts">
     import { page } from "$app/stores";
+    import { base } from "$app/paths";
     import logo from "./logo.svg";
 
     type NavList = [name: string, path: string, active: RegExp][];
     export const list: NavList = [
-        ["About", "/about", /^\/about/],
-        ["Solutions", "/solutions", /^\/solutions/],
+        ["About", base + "/about", /\/about/],
+        ["Solutions", base + "/solutions", /\/solutions/],
     ];
 </script>
 

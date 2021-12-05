@@ -7,7 +7,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "svelte-kit dev --open",
-        "build": "svelte-kit build",
+        "build": "node scripts/env_check && svelte-kit build",
         "package": "svelte-kit package",
         "preview": "svelte-kit preview",
         "check": "svelte-check --tsconfig ./tsconfig.json",
