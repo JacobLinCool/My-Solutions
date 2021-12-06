@@ -24,6 +24,7 @@ const config = {
         paths: {
             base: process.env.GITHUB_WORKFLOW === "build_gh_pages" ? "/my-solutions" : "",
         },
+        trailingSlash: "ignore",
     },
 };
 
