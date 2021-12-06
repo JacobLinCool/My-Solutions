@@ -6,13 +6,13 @@
     type NavList = [name: string, path: string, active: RegExp][];
     export const list: NavList = [
         ["About", base + "/about", /\/about/],
-        ["Solutions", base + "/solutions", /\/solutions/],
+        ["Solutions", base + "/solutions", /\/solution/],
     ];
 </script>
 
 <header>
     <div class="corner">
-        <a href="/">
+        <a href="{base}/">
             <img src={logo} alt="Logo" />
         </a>
     </div>

@@ -1,19 +1,50 @@
 <script context="module" lang="ts">
     import type { SolutionMeta } from "$lib/actions/solutions";
     import { base } from "$app/paths";
+    import { goto } from "$app/navigation";
+    import Fuse from "fuse.js";
 
     export async function load({ fetch }) {
-        const list = await fetch(`${base}/data/list.json`).then((r) => r.json());
-        return {
-            props: { list },
-        };
+        try {
+            const res = await fetch(`${base}/data/list.json`);
+            const list = await res.json();
+
+            return {
+                props: { list },
+            };
+        } catch (err) {
+            goto(base + "/");
+        }
     }
+    export const prerender = true;
 </script>
 
 <script lang="ts">
     export const title = "Solutions";
 
+    const options: Fuse.IFuseOptions<SolutionMeta> = {
+        keys: [
+            {
+                name: "title",
+                weight: 1,
+            },
+            {
+                name: "name",
+                weight: 0.7,
+            },
+            {
+                name: "tags",
+                weight: 0.4,
+            },
+        ],
+    };
+
     export let list: SolutionMeta[];
+    export let search = "";
+
+    const fuse = new Fuse(list, options);
+
+    $: filtered = search ? fuse.search(search).map((item) => item.item) : list;
 </script>
 
 <svelte:head>
@@ -23,12 +54,12 @@
 <section>
     <h1>{title}</h1>
     <div id="search-box">
-        <input type="text" placeholder="Search" />
-        <button>Search</button>
+        <input type="text" placeholder="Search" bind:value={search} />
+        <button on:click={() => (filtered = fuse.search(search).map((item) => item.item))}>Search</button>
     </div>
     <div id="solution-list">
-        {#each list as { name, title, tags }}
-            <a href={base + "solution/" + name}>
+        {#each filtered as { name, title, tags }}
+            <a sveltekit:prefetch href={base + "/solution/" + name}>
                 <div class="solution">
                     <h2>{title}</h2>
                     <p>{name}</p>

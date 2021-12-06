@@ -13,18 +13,19 @@ specifiers:
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-svelte3: ^3.2.1
+    fuse.js: ^6.4.6
     gray-matter: ^4.0.3
     katex: ^0.15.1
     markdown-it: ^12.2.0
     markdown-it-anchor: ^8.4.1
     markdown-it-katex: ^2.0.3
-    markdown-it-shiki: ^0.3.0
     markdown-it-texmath: ^0.9.6
     path: ^0.12.7
     postcss: ^8.3.9
     postcss-load-config: ^3.1.0
     prettier: ^2.4.1
     prettier-plugin-svelte: ^2.4.0
+    shiki: ^0.9.14
     svelte: ^3.44.0
     svelte-check: ^2.2.6
     svelte-preprocess: ^4.9.8
@@ -33,6 +34,7 @@ specifiers:
     typescript: ^4.4.3
 
 dependencies:
+    fuse.js: 6.4.6
     path: 0.12.7
 
 devDependencies:
@@ -53,12 +55,12 @@ devDependencies:
     markdown-it: 12.2.0
     markdown-it-anchor: 8.4.1_b5b6ac618dbcb305e9dd9bd86fa4e841
     markdown-it-katex: 2.0.3
-    markdown-it-shiki: 0.3.0
     markdown-it-texmath: 0.9.6
     postcss: 8.4.4
     postcss-load-config: 3.1.0
     prettier: 2.5.0
     prettier-plugin-svelte: 2.5.0_prettier@2.5.0+svelte@3.44.2
+    shiki: 0.9.14
     svelte: 3.44.2
     svelte-check: 2.2.10_4d00e6e9f7f5e449d97e7d1c5d5a9a9b
     svelte-preprocess: 4.9.8_9ae939bf28db463681c1b23ee6582d79
@@ -1329,6 +1331,11 @@ packages:
         resolution: { integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc= }
         dev: true
 
+    /fuse.js/6.4.6:
+        resolution: { integrity: sha512-/gYxR/0VpXmWSfZOIPS3rWwU8SHgsRTwWuXhyb2O6s7aRuVtHtxCkR33bNYu3wyLyNx/Wpv0vU7FZy8Vj53VNw== }
+        engines: { node: ">=10" }
+        dev: false
+
     /glob-parent/5.1.2:
         resolution: { integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow== }
         engines: { node: ">= 6" }
@@ -1683,16 +1690,6 @@ packages:
         resolution: { integrity: sha1-17hqGuoLnWSW+rTnkZoY/e9YnDk= }
         dependencies:
             katex: 0.6.0
-        dev: true
-
-    /markdown-it-shiki/0.3.0:
-        resolution: { integrity: sha512-oV7vKW3Ao/M1VOe1yI/zBaBWEA9uLZfMoUHuF5MX1J9T/eh9casf/dr6jj1FBsz16mcRmiSw/NKMyXkRQ3iGPQ== }
-        dependencies:
-            debug: 4.3.3
-            shiki: 0.9.14
-            synckit: 0.6.0
-        transitivePeerDependencies:
-            - supports-color
         dev: true
 
     /markdown-it-texmath/0.9.6:
@@ -2653,13 +2650,6 @@ packages:
             csso: 4.2.0
             picocolors: 1.0.0
             stable: 0.1.8
-        dev: true
-
-    /synckit/0.6.0:
-        resolution: { integrity: sha512-AYuCJsMNa/3m1UKxfM9edZEjsdz0Hj7namBHs1RAMcMxEJIBNrq3pUI5EmwtGNWPxOvozuVQtixMnzcMSWJ0xg== }
-        engines: { node: ">=12.3" }
-        dependencies:
-            tslib: 2.3.1
         dev: true
 
     /table/6.7.5:

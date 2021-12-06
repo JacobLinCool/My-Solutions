@@ -1,5 +1,6 @@
 <script lang="ts">
     export const title = "My Solutions";
+    export const prerender = true;
 </script>
 
 <svelte:head>
