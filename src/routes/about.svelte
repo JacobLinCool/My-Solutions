@@ -10,6 +10,12 @@
 <section>
     <h1>{title}</h1>
     <p>Hello.</p>
+    <br>
+    <div>
+        <a href="https://leetcode.card.workers.dev/" target="_blank">
+            <img alt="leetcode-card" src="https://leetcode.card.workers.dev/?username=JacobLinCool&style=auto&font=&extension=null" /></a
+        >
+    </div>
 </section>
 
 <style lang="postcss">
