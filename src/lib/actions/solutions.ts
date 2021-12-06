@@ -4,13 +4,14 @@ import gm from "gray-matter";
 import markdown from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItKatex from "markdown-it-katex";
-import MarkdownItShiki from "markdown-it-shiki";
+import * as shiki from "shiki";
 
 export type Solution = {
     name: string;
     title?: string;
     tags?: string[];
     content?: string;
+    raw?: string;
     solutions: {
         c?: string;
         cpp?: string;
@@ -92,15 +93,30 @@ export async function get_solutions(): Promise<Solution[]> {
                 }
             }
 
-            const md = markdown({
+            solution.raw = content;
+
+            const highlighter = await shiki.getHighlighter({
+                theme: "nord",
+            });
+
+            solution.content = markdown({
                 html: true,
                 linkify: true,
                 typographer: true,
-            });
-            md.use(markdownItAnchor);
-            // md.use(markdownItKatex);
-            // md.use(MarkdownItShiki, { theme: "nord" });
-            solution.content = md.render(content);
+                highlight: function (str, lang) {
+                    if (lang) {
+                        try {
+                            return highlighter.codeToHtml(str, lang);
+                            // eslint-disable-next-line no-empty
+                        } catch (err) {}
+                    }
+
+                    return "<pre><code>" + new markdown().utils.escapeHtml(str) + "</code></pre>";
+                },
+            })
+                .use(markdownItAnchor, {})
+                .use(markdownItKatex)
+                .render(solution.raw);
 
             solutions.push(solution);
         }

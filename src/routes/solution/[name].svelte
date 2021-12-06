@@ -3,8 +3,8 @@
     import { base } from "$app/paths";
 
     export async function load({ page, fetch }) {
-        const res = await fetch(`${base}/data/solution-${page.params.name}.json`);
-        const solution = await res.json();
+        const res = await fetch(`${base}/data/solution-${encodeURIComponent(page.params.name)}.json`);
+        let solution = await res.json();
 
         if (res.ok && solution) {
             return {
@@ -17,6 +17,7 @@
             };
         }
     }
+    export const prerender = true;
 </script>
 
 <script lang="ts">
@@ -94,5 +95,9 @@
 
     #solution-content :global(a:hover::after) {
         @apply w-full;
+    }
+
+    #solution-content :global(.katex-mathml) {
+        @apply hidden;
     }
 </style>
