@@ -59,7 +59,7 @@
     </div>
     <div id="solution-list">
         {#each filtered as { name, title, tags }}
-            <a sveltekit:prefetch href={base + "/solution/" + name}>
+            <a sveltekit:prefetch href={`${base}/solution/${name}/`}>
                 <div class="solution">
                     <h2>{title}</h2>
                     <p>{name}</p>
