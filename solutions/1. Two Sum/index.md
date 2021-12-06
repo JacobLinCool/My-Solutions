@@ -10,11 +10,7 @@ author: JacobLinCool
 
 ## First Approach: Brute Force
 
-Complecity:
-
-$$
-O(n^2)
-$$
+Complecity: $O(n^2)$
 
 Just use 2 for loops to iterate over the array and check if the sum is equal to the target.
 
