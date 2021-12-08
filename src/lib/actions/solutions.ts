@@ -19,6 +19,7 @@ export type Solution = {
         python?: string;
         javascript?: string;
         typescript?: string;
+        php?: string;
     };
 };
 
@@ -81,6 +82,9 @@ export async function get_solutions(): Promise<Solution[]> {
                         break;
                     case ".ts":
                         solution.solutions.typescript = fs.readFileSync(path.resolve(solution_dir, file), "utf8");
+                        break;
+                    case ".php":
+                        solution.solutions.php = fs.readFileSync(path.resolve(solution_dir, file), "utf8");
                         break;
                 }
             }
