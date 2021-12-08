@@ -3,7 +3,7 @@
     import { base } from "$app/paths";
 
     export async function load({ page, fetch }) {
-        const res = await fetch(`${base}/data/solution-${encodeURIComponent(page.params.name)}.json`);
+        const res = await fetch(`${base}/data/solution/${page.params.name}.json`);
         let solution = await res.json();
 
         if (res.ok && solution) {

@@ -1,20 +1,16 @@
 <script context="module" lang="ts">
     import type { SolutionMeta } from "$lib/actions/solutions";
     import { base } from "$app/paths";
-    import { goto } from "$app/navigation";
     import Fuse from "fuse.js";
 
     export async function load({ fetch }) {
-        try {
-            const res = await fetch(`${base}/data/list.json`);
-            const list = await res.json();
+        console.log(`${base}/data/list.json`);
+        const res = await fetch(`${base}/data/list.json`);
+        const list = await res.json();
 
-            return {
-                props: { list },
-            };
-        } catch (err) {
-            goto(base + "/");
-        }
+        return {
+            props: { list },
+        };
     }
     export const prerender = true;
 </script>

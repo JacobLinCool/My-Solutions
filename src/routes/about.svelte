@@ -10,10 +10,10 @@
 <section>
     <h1>{title}</h1>
     <p>Hello.</p>
-    <br>
+    <br />
     <div>
         <a href="https://leetcode.card.workers.dev/" target="_blank">
-            <img alt="leetcode-card" src="https://leetcode.card.workers.dev/JacobLinCool?theme=nord&font=ruthie" /></a
+            <img alt="leetcode-card" src="https://leetcode.card.workers.dev/JacobLinCool?theme=nord&font=milonga" /></a
         >
     </div>
 </section>
